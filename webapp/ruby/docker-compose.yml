@@ -6,6 +6,10 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      # ln -s ../sql ${pwd}/sql
+      - ./sql:/usr/src/sql
+      - ./sql/my.cnf:/etc/mysql/conf.d/my.cnf
   web:
     build: .
     command: 'rackup -o 0.0.0.0 -p 3000 config.ru'
