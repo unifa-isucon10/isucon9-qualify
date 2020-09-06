@@ -30,6 +30,7 @@ common:
 development:
   <<: *default_settings
   app_name: isucon9-qualify (Development)
+  agent_enabled: false
 test:
   <<: *default_settings
   # It doesn't make sense to report to New Relic from automated test runs.
