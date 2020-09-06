@@ -6,6 +6,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./sql:/usr/src/sql
+      - ./sql/my.cnf:/etc/mysql/conf.d/my.cnf
   web:
     build: .
     command: 'rackup -o 0.0.0.0 -p 3000 config.ru'
@@ -14,6 +17,6 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/usr/src/app
+      - ./ruby/lib:/usr/src/app/lib
     environment:
       MYSQL_HOST: db
