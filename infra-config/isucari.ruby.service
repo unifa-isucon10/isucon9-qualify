@@ -2,7 +2,7 @@
 Description = isucon9 qualifier main application in ruby
 
 [Service]
-WorkingDirectory=/home/isucon/isucari/webapp/ruby
+WorkingDirectory=/home/isucon/isucon9-qualify/webapp/ruby
 EnvironmentFile=/home/isucon/env.sh
 
 ExecStart = /home/isucon/local/ruby/bin/bundle exec rackup -p 8000
